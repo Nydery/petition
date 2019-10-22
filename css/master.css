@@ -1,0 +1,120 @@
+
+html {
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+@media only screen and (max-width: 740px) {
+
+	body {
+    background: url(../bg-mobile.png);
+  }
+}
+
+body {
+  margin: 0px;
+  background: url(../bg-img2.png);
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /*background-size: auto;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+#wholeSite {
+  text-align: center;
+}
+
+#head {
+  margin-bottom: 20px;
+}
+
+#head h1 {
+  font-size: 70px;
+  color: Black;
+  text-decoration: underline;
+
+  margin-bottom: 0px;
+
+
+}
+
+#head h2 {
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 10%;
+}
+
+.formular div input:not(.submit) {
+  margin: 0px;
+  width: 430px;
+  /*padding-right: 100px;*/
+
+  font-size: 30px;
+  text-align: left;
+
+  background-color: rgba(255, 255, 255, 0.35);
+  color: black;
+
+  border: none;
+    border-radius: 4px;
+}
+
+.formular p {
+  margin-bottom: 0px;
+  font-size: 35px;
+
+  color: black;
+}
+
+.formular h3 {
+  font-size: 15px;
+  color: red;
+}
+
+.submit {
+  margin-top: 20px;
+  padding: 20px 40px;
+
+  background-color: #41739a;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+
+.formItem p{
+
+}
+
+#checkbox {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+
+#Error {
+  width: 50%;
+  margin-left: 25%;
+
+  color: #ab0900;
+  background-color: rgba(240, 240, 240, 0.8);
+  border-radius: 4px;
+
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 25px;
+}
