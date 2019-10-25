@@ -20,7 +20,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* height: 100%; */
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #wholeSite {
