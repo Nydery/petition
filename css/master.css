@@ -15,12 +15,8 @@ html {
 body {
   margin: 0px;
   background: url(../bg-img2.png);
-
-  /* background-size: 100% 100%; */
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* height: 100%; */
-  overflow: scroll;
 }
 
 #wholeSite {
