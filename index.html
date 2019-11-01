@@ -29,7 +29,7 @@
 
           <div class="form-group">
             <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer1" onclick="removeFirstOption(this)">
+            <select class="form-control" id="answer1" onclick="removeFirstOption('answer1')">
               <option>Antwort auswählen. . .</option>
               <option>Ja</option>
               <option>Nein</option>
@@ -137,8 +137,9 @@
     </div>
 
     <script>
-      function deleteFirstOption(item) {
-        $("#selectList option[value='" + item.value + "']").remove();
+      function deleteFirstOption(id) {
+        var item = document.getElementById(id);
+        item.remove(0);
       }
     </script>
 
