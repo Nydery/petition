@@ -68,3 +68,13 @@ body{
   margin-top: 4px;
   font-weight: bold;
 }
+
+#submitButton {
+  margin: 50px;
+  padding: 15px 60px;
+
+  background-color: #00bf6f;
+  color: white;
+
+  border-radius: 4px;
+}
