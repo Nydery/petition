@@ -20,7 +20,7 @@
       <h3 id="firstHeadline">Der neue Kollektivvertrag/Zeitung</h3>
 
       <br>
-      <form action="http://frocle.ddns.net/petition/saveSurvey.php">
+      <form action="checkAnswers()">
         <article class="questionArticle">
           <h5>1. Frage</h5>
           <p class="question">
@@ -143,6 +143,10 @@
       function deleteFirstOption(id) {
         var item = document.getElementById(id);
         item.remove(0);
+      }
+
+      function checkAnswers() {
+        console.log('test');
       }
     </script>
 
