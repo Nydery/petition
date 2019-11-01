@@ -60,6 +60,10 @@ body{
   margin: 10px;
 }
 
+.questionArticle + .questionArticle {
+  margin-top: 30px;
+}
+
 .answerHead {
   margin-top: 4px;
   font-weight: bold;
