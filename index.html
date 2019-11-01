@@ -146,7 +146,21 @@
       }
 
       function checkAnswers() {
-        console.log('test');
+        var result = 0;
+
+        if(document.getElementById('answer1').value != 'Antwort auswählen. . .') {result++;}
+        if(document.getElementById('answer2').value != 'Antwort auswählen. . .') {result++;}
+        if(document.getElementById('answer3').value != 'Antwort auswählen. . .') {result++;}
+        if(document.getElementById('answer4').value != 'Antwort auswählen. . .') {result++;}
+        if(document.getElementById('answer5').value != '') {result++;}
+
+        if(result == 5){
+          console.log('Success');
+        }
+        else {
+          //document.getElementById('Error').display = "inline";
+          console.log('Error');
+        }
       }
     </script>
 
