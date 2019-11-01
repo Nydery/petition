@@ -148,10 +148,22 @@
       function checkAnswers() {
         var result = 0;
 
-        if(document.getElementById('answer1').value != 'Antwort auswählen. . .') {result++;}
-        if(document.getElementById('answer2').value != 'Antwort auswählen. . .') {result++;}
-        if(document.getElementById('answer3').value != 'Antwort auswählen. . .') {result++;}
-        if(document.getElementById('answer4').value != 'Antwort auswählen. . .') {result++;}
+        var item = (document.getElementById('answer1')
+        var text = item.options[item.SelectedIndex].text;
+        if(text != 'Antwort auswählen. . .') {result++;}
+
+        item = (document.getElementById('answer2')
+        text = item.options[item.SelectedIndex].text;
+        if(text != 'Antwort auswählen. . .') {result++;}
+
+        item = (document.getElementById('answer3')
+        text = item.options[item.SelectedIndex].text;
+        if(text != 'Antwort auswählen. . .') {result++;}
+
+        item = (document.getElementById('answer4')
+        text = item.options[item.SelectedIndex].text;
+        if(text != 'Antwort auswählen. . .') {result++;}
+
         if(document.getElementById('answer5').value != '') {result++;}
 
         if(result == 5){
