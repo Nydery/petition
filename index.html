@@ -152,6 +152,11 @@
         }
 
         if(result == 4){
+          var firstComment = document.getElementById('comment1') == "" ? "EMPTY" : document.getElementById('comment1');
+          var secondComment = document.getElementById('comment2') == "" ? "EMPTY" : document.getElementById('comment2');
+          var thirdComment = document.getElementById('comment3') == "" ? "EMPTY" : document.getElementById('comment3');
+          var fourthComment = document.getElementById('comment4') == "" ? "EMPTY" : document.getElementById('comment4');
+
           var linkWithParams = "https://saveanswers.000webhostapp.com?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + document.getElementById('comment1').value
            + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + document.getElementById('comment2').value
             + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + document.getElementById('comment3').value
