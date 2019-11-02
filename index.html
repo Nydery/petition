@@ -131,6 +131,19 @@
       function checkAnswers() {
         var result = 0;
 
+        alert("Um zu verifizieren, dass Sie kein Roboter sind, müssen wir Sie bitten die folgenden Fragen zu beantworten.");
+        var birthday = "", birthplace = "";
+        birthday = promt("Ihr Geburtsdatum: ");
+        birthplace = promt("Ihr Geburtsort: ");
+
+        if(birthday != ""){
+          result++;
+        }
+
+        if(birthplace != "") {
+          result++;
+        }
+
         var text = document.getElementById('answer1').value;
         if(text != "Antwort auswählen. . .") {
           result++;
@@ -151,25 +164,25 @@
           result++;
         }
 
-        if(result == 4){
+        if(result == 6){
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
           var fourthComment = document.getElementById('comment4').value == "" ? "EMPTY" : document.getElementById('comment4').value;
 
           var linkWithParams = "https://saveanswers.bplaced.net/index.php?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
-           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
-            + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
-            + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment;
+          + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
+          + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
+          + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
+          + "&birthday=" + birthday
+          + "&birthplace=" + birthplace;
 
           console.log('Success\n' + linkWithParams);
           window.location.href = linkWithParams;
-
         }
         else {
-          //document.getElementById('Error').display = "inline";
           console.log('Error');
-          console.log(4 - result + " Antworten fehlen");
+          console.log(6 - result + " Antworten fehlen");
         }
       }
 
