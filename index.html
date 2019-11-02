@@ -29,7 +29,7 @@
 
           <div class="form-group">
             <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer1" onclick="removeFirstOption('answer1')">
+            <select class="form-control" id="answer1">
               <option>Antwort auswählen. . .</option>
               <option>Ja</option>
               <option>Nein</option>
@@ -116,22 +116,10 @@
         </article>
 
         <article class="questionArticle">
-          <h5>5. Frage</h5>
+          <h5>Zu Ihrer Information</h5>
           <p class="question">
             Diese Umfrage passiert auf Eigeninitiative der Gewerkschaftsmitglieder und soll zur Einschätzung der jetzigen Situation dienen!
           </p>
-
-          <div class="form-group">
-            <label class="answerHead">Ihre Antwort</label>
-            <div class="form-group">
-              <textarea class="form-control" id="answer5" rows="1"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare</label>
-              <textarea class="form-control" id="comment5" rows="1"></textarea>
-            </div>
-          </div>
         </article>
         <div class="text-center">
           <input id="submitButton" type="submit" value="Absenden">
@@ -140,40 +128,51 @@
     </div>
 
     <script>
-      function deleteFirstOption(id) {
-        var item = document.getElementById(id);
-        item.remove(0);
-      }
-
       function checkAnswers() {
         var result = 0;
 
-        var item = document.getElementById('answer1');
-        var text = item.value;
-        if(text != 'Antwort auswählen. . .') {result++;}
+        var text = document.getElementById('answer1').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
 
-        item = document.getElementById('answer2');
-        text = item.options[item.SelectedIndex].text;
-        if(text != 'Antwort auswählen. . .') {result++;}
+        text = document.getElementById('answer2').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
 
-        item = document.getElementById('answer3');
-        text = item.options[item.SelectedIndex].text;
-        if(text != 'Antwort auswählen. . .') {result++;}
+        text = document.getElementById('answer3').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
 
-        item = document.getElementById('answer4');
-        text = item.options[item.SelectedIndex].text;
-        if(text != 'Antwort auswählen. . .') {result++;}
+        text = document.getElementById('answer4').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
 
-        if(document.getElementById('answer5').value != '') {result++;}
+        if(result == 4){
+          var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
+          var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
+          var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
+          var fourthComment = document.getElementById('comment4').value == "" ? "EMPTY" : document.getElementById('comment4').value;
 
-        if(result == 5){
-          console.log('Success');
+          var linkWithParams = "https://saveanswers.000webhostapp.com?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
+           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
+            + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
+            + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment;
+
+          console.log('Success\n' + linkWithParams);
+          window.location.href = linkWithParams;
+
         }
         else {
           //document.getElementById('Error').display = "inline";
           console.log('Error');
+          console.log(4 - result + " Antworten fehlen");
         }
       }
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
