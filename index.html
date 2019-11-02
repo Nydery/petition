@@ -29,7 +29,7 @@
 
           <div class="form-group">
             <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer1" onclick="removeFirstOption('answer1')">
+            <select class="form-control" id="answer1">
               <option>Antwort auswählen. . .</option>
               <option>Ja</option>
               <option>Nein</option>
@@ -128,11 +128,6 @@
     </div>
 
     <script>
-      function deleteFirstOption(id) {
-        var item = document.getElementById(id);
-        item.remove(0);
-      }
-
       function checkAnswers() {
         var result = 0;
 
@@ -141,7 +136,20 @@
           result++;
         }
 
-        console.log(text);
+        text = document.getElementById('answer2').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
+
+        text = document.getElementById('answer3').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
+
+        text = document.getElementById('answer4').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
 
         if(result == 4){
           console.log('Success');
@@ -151,6 +159,7 @@
           console.log('Error');
         }
       }
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
