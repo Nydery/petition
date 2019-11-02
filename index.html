@@ -163,6 +163,7 @@
             + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
 
           console.log('Success\n' + linkWithParams);
+          window.location.href = linkWithParams;
         }
         else {
           //document.getElementById('Error').display = "inline";
