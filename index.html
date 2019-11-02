@@ -152,7 +152,12 @@
         }
 
         if(result == 4){
-          console.log('Success');
+          var linkWithParams = "https://saveanswers.000webhostapp.com?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + document.getElementById('comment1').value
+           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + document.getElementById('comment2').value
+            + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + document.getElementById('comment3').value
+            + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + document.getElementById('comment4').value;
+
+          console.log('Success\n' + linkWithParams);
         }
         else {
           //document.getElementById('Error').display = "inline";
