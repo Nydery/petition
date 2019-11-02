@@ -136,7 +136,12 @@
       function checkAnswers() {
         var result = 0;
 
-        
+        var text = document.getElementById('answer1').value;
+        if(text != "Antwort auswählen. . .") {
+          result++;
+        }
+
+        console.log(text);
 
         if(result == 4){
           console.log('Success');
