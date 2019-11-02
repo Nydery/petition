@@ -152,12 +152,6 @@
         }
 
         if(result == 4){
-          var ip;
-
-          $.getJSON('http://ipinfo.io', function(data){
-              ip = data;
-          });
-
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
@@ -166,8 +160,7 @@
           var linkWithParams = "https://saveanswers.000webhostapp.com?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
            + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
             + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
-            + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
-            + "&ip=" + ip;
+            + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment;
 
           console.log('Success\n' + linkWithParams);
           window.location.href = linkWithParams;
