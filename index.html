@@ -21,6 +21,19 @@
 
       <br>
       <form action="javascript:checkAnswers()">
+        <article id="error" class="errorArticle" hidden>
+          <h3>Bitte füllen Sie alle Antworten aus!</h3>
+        </article>
+
+        <article class="questionArticle">
+          <h5>Zu Ihrer Information</h5>
+          <p class="question">
+            Diese Umfrage passiert auf Eigeninitiative der Gewerkschaftsmitglieder und soll zur Einschätzung der jetzigen Situation dienen!
+            <br>
+            Vielen Dank für Ihre Teilnahme!
+          </p>
+        </article>
+
         <article class="questionArticle">
           <h5>1. Frage</h5>
           <p class="question">
@@ -37,7 +50,7 @@
             </select>
 
             <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare</label>
+              <label class="answerHead">Sonstige Kommentare(optional)</label>
               <textarea class="form-control" id="comment1" rows="1"></textarea>
             </div>
           </div>
@@ -65,7 +78,7 @@
             </select>
 
             <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare</label>
+              <label class="answerHead">Sonstige Kommentare(optional)</label>
               <textarea class="form-control" id="comment2" rows="1"></textarea>
             </div>
           </div>
@@ -87,7 +100,7 @@
             </select>
 
             <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare</label>
+              <label class="answerHead">Sonstige Kommentare(optional)</label>
               <textarea class="form-control" id="comment3" rows="1"></textarea>
             </div>
           </div>
@@ -109,17 +122,15 @@
             </select>
 
             <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare</label>
+              <label class="answerHead">Sonstige Kommentare(optional)</label>
               <textarea class="form-control" id="comment4" rows="1"></textarea>
             </div>
           </div>
         </article>
 
         <article class="questionArticle">
-          <h5>Zu Ihrer Information</h5>
-          <p class="question">
-            Diese Umfrage passiert auf Eigeninitiative der Gewerkschaftsmitglieder und soll zur Einschätzung der jetzigen Situation dienen!
-          </p>
+          <h5>Bevor Sie Ihre Antworten absenden können, müssen Sie zum bestätigen Ihren Namen eingeben.</h5>
+          <input class="form-control" id="name" type="text">
         </article>
         <div class="text-center">
           <input id="submitButton" type="submit" value="Absenden">
@@ -128,21 +139,8 @@
     </div>
 
     <script>
-      function checkAnswers() {
+      function checkAnswers(returnValue) {
         var result = 0;
-
-        alert("Um zu verifizieren, dass Sie kein Roboter sind, müssen wir Sie bitten die folgenden Fragen zu beantworten.");
-        var birthday = " ", birthplace = " ";
-        birthday = prompt("Ihr Geburtsdatum: ");
-        birthplace = prompt("Ihr Geburtsort: ");
-
-        if(birthday != " "){
-          result++;
-        }
-
-        if(birthplace != " ") {
-          result++;
-        }
 
         var text = document.getElementById('answer1').value;
         if(text != "Antwort auswählen. . .") {
@@ -163,8 +161,12 @@
         if(text != "Antwort auswählen. . .") {
           result++;
         }
+        text = document.getElementById('name').value;
+        if(text != null){
+          result++;
+        }
 
-        if(result == 6){
+        if(result == 7){
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
@@ -174,13 +176,30 @@
           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
           + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
           + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
-          + "&birthday=" + birthday
-          + "&birthplace=" + birthplace;
+          + "&name=" + document.getElementById('name').value;
 
           console.log('Success\n' + linkWithParams);
-          window.location.href = linkWithParams;
+          //window.location.href = linkWithParams;
+
+
+          var request = new XMLHttpRequest()
+
+          // Open a new connection, using the GET request on the URL endpoint
+          request.open('GET', linkWithParams, true)
+
+          request.onload = function() {
+            // Begin accessing JSON data here
+            console.log(JSON.stringify(request));
+          }
+
+          // Send request
+          request.send()
+
+
         }
         else {
+          document.getElementById('error').removeAttribute("hidden");
+          window.location.href="#firstHeadline";
           console.log('Error');
           console.log(6 - result + " Antworten fehlen");
         }
