@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/master.css">
-
   </head>
   <body>
     <div class="navbar">
@@ -162,17 +161,17 @@
           result++;
         }
         text = document.getElementById('name').value;
-        if(text != null){
+        if(text != ""){
           result++;
         }
 
-        if(result == 7){
+        if(result == 5){
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
           var fourthComment = document.getElementById('comment4').value == "" ? "EMPTY" : document.getElementById('comment4').value;
 
-          var linkWithParams = "https://frocle.byiconic.at/saveanswers/index.php?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
+          var linkWithParams = "https://frocle.byiconic.at/saveanswers/save.php?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
           + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
           + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
@@ -180,21 +179,14 @@
 
           console.log('Success\n' + linkWithParams);
           //window.location.href = linkWithParams;
-
-
-          var request = new XMLHttpRequest()
-
-          // Open a new connection, using the GET request on the URL endpoint
-          request.open('GET', linkWithParams, true)
-
-          request.onload = function() {
-            // Begin accessing JSON data here
-            console.log(JSON.stringify(request));
+          const getData = () => {
+            fetch(linkWithParams).then(response => {
+              console.log("i got here");
+              console.log(response);
+            });
           }
 
-          // Send request
-          request.send()
-
+          getData();
 
         }
         else {
