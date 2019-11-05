@@ -97,3 +97,9 @@ body{
 
   border-radius: 4px;
 }
+
+.footer {
+  background-color: gray;
+  color: black;
+  width: 100%;
+}
