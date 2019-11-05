@@ -35,6 +35,14 @@ body{
   font-family: National2,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 20px;
 }
+.navbar h4 {
+  float: right;
+  padding-top: 10px;
+  background-color: inherit;
+  color: #00996f;
+  font-family: National2,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+}
 
 #firstHeadline {
   margin-top: 50px;
@@ -96,10 +104,4 @@ body{
   color: white;
 
   border-radius: 4px;
-}
-
-.footer {
-  background-color: gray;
-  color: black;
-  width: 100%;
 }
