@@ -11,7 +11,7 @@
   <body>
     <div class="navbar">
       <h2>Der neue Kollektivvertrag/Zeitung</h2>
-      <h4>2.0.0</h4>
+      <h4>2.1.1</h4>
     </div>
     <div class="container">
       <h3 id="firstHeadline">Der neue Kollektivvertrag/Zeitung</h3>
@@ -55,12 +55,6 @@
                 <textarea class="form-control" id="comment1" rows="1"></textarea>
               </div>
             </div>
-
-            <!--
-            <input type="checkbox" id="yes1"> Ja <br>
-            <input type="checkbox" id="no1"> Nein <br>
-            <input type="checkbox" id="idk1"> Weiss nicht <br>
-            -->
           </article>
 
           <article class="questionArticle">
@@ -148,12 +142,6 @@
       </div>
     </section>
 
-    <section id="dbError" hidden>
-      <div class="container text-center">
-        <h1>Sie können nur einmal teilnehmen.</h1>
-      </div>
-    </section>
-
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
@@ -204,16 +192,8 @@
         if(text != "Antwort auswählen. . .") {
           result++;
         }
-        text = document.getElementById('name').value;
-        if(text != ""){
-          result++;
-        }
-        text = document.getElementById('birthplace').value;
-        if(text != ""){
-          result++;
-        }
 
-        if(result == 6){
+        if(result == 4){
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
@@ -224,23 +204,13 @@
           var thirdAnswer = document.getElementById('answer3').value;
           var fourthAnswer = document.getElementById('answer4').value;
 
-          var name = document.getElementById('name').value;
-          var birthplace = document.getElementById('birthplace').value;
-
-/*
-          var linkWithParams = "https://frocle.byiconic.at/saveanswers/save.php?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
-          + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
-          + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
-          + "&fourthAns=" + document.getElementById('answer4').value + "&fourthComm=" + fourthComment
-          + "&name=" + document.getElementById('name').value;
-
-          console.log('Success\n' + linkWithParams);
-          //window.location.href = linkWithParams;
-          */
-
           var database = firebase.firestore();
 
-         var answersRef = database.collection('Umfrage').doc(name + ":" + birthplace);
+         var answersRef = database.collection('Umfrage');
+         answersRef.add({firstAnswer: firstAnswer, firstComment: firstComment, secondAnswer: secondAnswer, secondComment:  secondComment, thirdAnswer: thirdAnswer, thirdComment: thirdComment, fourthAnswer: fourthAnswer, fourthComment: fourthComment});
+         document.getElementById('staticSite').setAttribute("hidden", true);
+         document.getElementById('success').removeAttribute("hidden");
+         /*
          answersRef.get()
            .then(function (docSnapshot) {
              if (docSnapshot.exists) {
@@ -255,13 +225,13 @@
                document.getElementById('success').removeAttribute("hidden");
              }
          });
-
+*/
         }
         else {
           document.getElementById('error').removeAttribute("hidden");
           window.location.href="#firstHeadline";
           console.log('Error');
-          console.log(6 - result + " Antworten fehlen");
+          console.log(4 - result + " Antworten fehlen");
         }
       }
 
