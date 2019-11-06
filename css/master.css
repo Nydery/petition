@@ -45,7 +45,7 @@ body{
 }
 
 #firstHeadline {
-  margin-top: 70px;
+  margin-top: 75px;
 
   background-color: inherit;
 
@@ -114,5 +114,5 @@ h1{
 }
 
 input {
-  margin: 15px;
+  margin-top: 10px;
 }
