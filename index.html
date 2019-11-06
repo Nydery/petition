@@ -11,134 +11,177 @@
   <body>
     <div class="navbar">
       <h2>Der neue Kollektivvertrag/Zeitung</h2>
-      <h4>V 1.0.0</h4>
+      <h4>2.0.0</h4>
     </div>
-
-
     <div class="container">
-      stylesheet
       <h3 id="firstHeadline">Der neue Kollektivvertrag/Zeitung</h3>
-
       <br>
-      <form action="javascript:checkAnswers()">
-        <article id="error" class="errorArticle" hidden>
-          <h3>Bitte füllen Sie alle Antworten aus!</h3>
-        </article>
-
-        <article class="questionArticle">
-          <h5>Zu Ihrer Information</h5>
-          <p class="question">
-            Diese Umfrage passiert auf Eigeninitiative der Gewerkschaftsmitglieder und soll zur Einschätzung der jetzigen Situation dienen!
-            <br>
-            Vielen Dank für Ihre Teilnahme!
-          </p>
-        </article>
-
-        <article class="questionArticle">
-          <h5>1. Frage</h5>
-          <p class="question">
-            Wollen wir einen KV mit 9% Lohneinbußung auf 6 Jahre für alle und deutlicher Verschlechterung für neu Eintritte. Details sind bekannt mit 9 jähriger Laufzeit?
-          </p>
-
-          <div class="form-group">
-            <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer1">
-              <option>Antwort auswählen. . .</option>
-              <option>Ja</option>
-              <option>Nein</option>
-              <option>Weiss nicht</option>
-            </select>
-
-            <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare(optional)</label>
-              <textarea class="form-control" id="comment1" rows="1"></textarea>
-            </div>
-          </div>
-
-          <!--
-          <input type="checkbox" id="yes1"> Ja <br>
-          <input type="checkbox" id="no1"> Nein <br>
-          <input type="checkbox" id="idk1"> Weiss nicht <br>
-          -->
-        </article>
-
-        <article class="questionArticle">
-          <h5>2. Frage</h5>
-          <p class="question">
-            Soll DJP - Vorsitzender Michael Ritzinger zurücktreten?
-          </p>
-
-          <div class="form-group">
-            <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer2">
-              <option>Antwort auswählen. . .</option>
-              <option>Ja</option>
-              <option>Nein</option>
-              <option>Weiss nicht</option>
-            </select>
-
-            <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare(optional)</label>
-              <textarea class="form-control" id="comment2" rows="1"></textarea>
-            </div>
-          </div>
-        </article>
-
-        <article class="questionArticle">
-          <h5>3. Frage</h5>
-          <p class="question">
-            Soll der neue Kollektivvertrag/Zeitung abgeschlossen werden?
-          </p>
-
-          <div class="form-group">
-            <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer3">
-              <option>Antwort auswählen. . .</option>
-              <option>Ja</option>
-              <option>Nein</option>
-              <option>Weiss nicht</option>
-            </select>
-
-            <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare(optional)</label>
-              <textarea class="form-control" id="comment3" rows="1"></textarea>
-            </div>
-          </div>
-        </article>
-
-        <article class="questionArticle">
-          <h5>4. Frage</h5>
-          <p class="question">
-            Fühlen Sie sich von der Gewerkschaft DJP gut vertreten?
-          </p>
-
-          <div class="form-group">
-            <label class="answerHead">Ihre Antwort</label>
-            <select class="form-control" id="answer4">
-              <option>Antwort auswählen. . .</option>
-              <option>Ja</option>
-              <option>Nein</option>
-              <option>Weiss nicht</option>
-            </select>
-
-            <div class="form-group">
-              <label class="answerHead">Sonstige Kommentare(optional)</label>
-              <textarea class="form-control" id="comment4" rows="1"></textarea>
-            </div>
-          </div>
-        </article>
-
-        <article class="questionArticle">
-          <h5>Bevor Sie Ihre Antworten absenden können, müssen Sie zum bestätigen Ihren Namen eingeben.</h5>
-          <input class="form-control" id="name" type="text">
-        </article>
-        <div class="text-center">
-          <input id="submitButton" type="submit" value="Absenden">
-        </div>
-      </form>
     </div>
+
+
+    <section id="staticSite">
+      <div class="container">
+        <form action="javascript:checkAnswers()">
+          <article id="error" class="errorArticle" hidden>
+            <h3>Bitte füllen Sie alle Antworten aus!</h3>
+          </article>
+
+          <article class="questionArticle">
+            <h5>Zu Ihrer Information</h5>
+            <p class="question">
+              Diese Umfrage passiert auf Eigeninitiative der Gewerkschaftsmitglieder und soll zur Einschätzung der jetzigen Situation dienen!
+              <br>
+              Vielen Dank für Ihre Teilnahme!
+            </p>
+          </article>
+
+          <article class="questionArticle">
+            <h5>1. Frage</h5>
+            <p class="question">
+              Wollen wir einen KV mit 9% Lohneinbußung auf 6 Jahre für alle und deutlicher Verschlechterung für neu Eintritte. Details sind bekannt mit 9 jähriger Laufzeit?
+            </p>
+
+            <div class="form-group">
+              <label class="answerHead">Ihre Antwort</label>
+              <select class="form-control" id="answer1">
+                <option>Antwort auswählen. . .</option>
+                <option>Ja</option>
+                <option>Nein</option>
+                <option>Weiss nicht</option>
+              </select>
+
+              <div class="form-group">
+                <label class="answerHead">Sonstige Kommentare(optional)</label>
+                <textarea class="form-control" id="comment1" rows="1"></textarea>
+              </div>
+            </div>
+
+            <!--
+            <input type="checkbox" id="yes1"> Ja <br>
+            <input type="checkbox" id="no1"> Nein <br>
+            <input type="checkbox" id="idk1"> Weiss nicht <br>
+            -->
+          </article>
+
+          <article class="questionArticle">
+            <h5>2. Frage</h5>
+            <p class="question">
+              Soll DJP - Vorsitzender Michael Ritzinger zurücktreten?
+            </p>
+
+            <div class="form-group">
+              <label class="answerHead">Ihre Antwort</label>
+              <select class="form-control" id="answer2">
+                <option>Antwort auswählen. . .</option>
+                <option>Ja</option>
+                <option>Nein</option>
+                <option>Weiss nicht</option>
+              </select>
+
+              <div class="form-group">
+                <label class="answerHead">Sonstige Kommentare(optional)</label>
+                <textarea class="form-control" id="comment2" rows="1"></textarea>
+              </div>
+            </div>
+          </article>
+
+          <article class="questionArticle">
+            <h5>3. Frage</h5>
+            <p class="question">
+              Soll der neue Kollektivvertrag/Zeitung abgeschlossen werden?
+            </p>
+
+            <div class="form-group">
+              <label class="answerHead">Ihre Antwort</label>
+              <select class="form-control" id="answer3">
+                <option>Antwort auswählen. . .</option>
+                <option>Ja</option>
+                <option>Nein</option>
+                <option>Weiss nicht</option>
+              </select>
+
+              <div class="form-group">
+                <label class="answerHead">Sonstige Kommentare(optional)</label>
+                <textarea class="form-control" id="comment3" rows="1"></textarea>
+              </div>
+            </div>
+          </article>
+
+          <article class="questionArticle">
+            <h5>4. Frage</h5>
+            <p class="question">
+              Fühlen Sie sich von der Gewerkschaft DJP gut vertreten?
+            </p>
+
+            <div class="form-group">
+              <label class="answerHead">Ihre Antwort</label>
+              <select class="form-control" id="answer4">
+                <option>Antwort auswählen. . .</option>
+                <option>Ja</option>
+                <option>Nein</option>
+                <option>Weiss nicht</option>
+              </select>
+
+              <div class="form-group">
+                <label class="answerHead">Sonstige Kommentare(optional)</label>
+                <textarea class="form-control" id="comment4" rows="1"></textarea>
+              </div>
+            </div>
+          </article>
+
+          <article class="questionArticle">
+            <h5>Bevor Sie Ihre Antworten absenden können, müssen Sie zum bestätigen Ihren Vollständigen Namen und Geburtsort eingeben.</h5>
+            <input class="form-control" id="name" type="text" placeholder="Name">
+            <input class="form-control" id="birthplace" type="text" placeholder="Geburtsort">
+            <h5><strong>Überprüfen Sie Ihre Eingabe bevor Sie fortfahren!</strong></h5>
+          </article>
+          <div class="text-center">
+            <input id="submitButton" type="submit" value="Absenden">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="success" hidden>
+      <div class="container  text-center">
+        <h1>Vielen Dank für Ihre Teilnahme.</h1>
+      </div>
+    </section>
+
+    <section id="dbError" hidden>
+      <div class="container text-center">
+        <h1>Sie können nur einmal teilnehmen.</h1>
+      </div>
+    </section>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
 
     <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAtfNRHN-k5WZ8RrOtTOWW-jNit4yQsHJE",
+        authDomain: "umfrage-5facc.firebaseapp.com",
+        databaseURL: "https://umfrage-5facc.firebaseio.com",
+        projectId: "umfrage-5facc",
+        storageBucket: "umfrage-5facc.appspot.com",
+        messagingSenderId: "141692917536",
+        appId: "1:141692917536:web:27702d2262f2d1677c6945",
+        measurementId: "G-2V215MLHZJ"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script>
+
       function checkAnswers(returnValue) {
         var result = 0;
 
@@ -165,13 +208,26 @@
         if(text != ""){
           result++;
         }
+        text = document.getElementById('birthplace').value;
+        if(text != ""){
+          result++;
+        }
 
-        if(result == 5){
+        if(result == 6){
           var firstComment = document.getElementById('comment1').value == "" ? "EMPTY" : document.getElementById('comment1').value;
           var secondComment = document.getElementById('comment2').value == "" ? "EMPTY" : document.getElementById('comment2').value;
           var thirdComment = document.getElementById('comment3').value == "" ? "EMPTY" : document.getElementById('comment3').value;
           var fourthComment = document.getElementById('comment4').value == "" ? "EMPTY" : document.getElementById('comment4').value;
 
+          var firstAnswer = document.getElementById('answer1').value;
+          var secondAnswer = document.getElementById('answer2').value;
+          var thirdAnswer = document.getElementById('answer3').value;
+          var fourthAnswer = document.getElementById('answer4').value;
+
+          var name = document.getElementById('name').value;
+          var birthplace = document.getElementById('birthplace').value;
+
+/*
           var linkWithParams = "https://frocle.byiconic.at/saveanswers/save.php?firstAns=" + document.getElementById('answer1').value + "&firstComm=" + firstComment
           + "&secondAns=" + document.getElementById('answer2').value + "&secondComm=" + secondComment
           + "&thirdAns=" + document.getElementById('answer3').value + "&thirdComm=" + thirdComment
@@ -180,7 +236,25 @@
 
           console.log('Success\n' + linkWithParams);
           //window.location.href = linkWithParams;
-          console.log("I got here");
+          */
+
+          var database = firebase.firestore();
+
+         var answersRef = database.collection('Umfrage').doc(name + ":" + birthplace);
+         answersRef.get()
+           .then(function (docSnapshot) {
+             if (docSnapshot.exists) {
+
+               document.getElementById('staticSite').setAttribute("hidden", true);
+               document.getElementById('dbError').removeAttribute("hidden");
+             } else {
+
+               answersRef.set({firstAnswer: firstAnswer, firstComment: firstComment, secondAnswer: secondAnswer, secondComment:  secondComment, thirdAnswer: thirdAnswer, thirdComment: thirdComment, fourthAnswer: fourthAnswer, fourthComment: fourthComment}); // create the document
+               console.log("eintrag erstellt!");
+               document.getElementById('staticSite').setAttribute("hidden", true);
+               document.getElementById('success').removeAttribute("hidden");
+             }
+         });
 
         }
         else {

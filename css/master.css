@@ -45,7 +45,7 @@ body{
 }
 
 #firstHeadline {
-  margin-top: 50px;
+  margin-top: 70px;
 
   background-color: inherit;
 
@@ -104,4 +104,15 @@ body{
   color: white;
 
   border-radius: 4px;
+}
+
+h1{
+  background-color: inherit;
+  color: black;
+  font-size: 60px;
+
+}
+
+input {
+  margin:10px;
 }
